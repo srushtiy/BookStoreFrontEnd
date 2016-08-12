@@ -1,0 +1,77 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>New User Registration</title>
+</head>
+<body>
+	<div class="panel-body">
+		<form:form class="form-horizontal" role="form" method="post"
+			commandName="user" action="user/register">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="useremail">Email</label>
+				<div class="col-sm-10">
+					<form:input path="useremail" type="email" class="form-control"
+						id="useremail" placeholder="Enter your email id" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="userphone">Contact
+					No:</label>
+				<div class="col-sm-10">
+					<form:input path="usercontact" type="text" class="form-control"
+						pattern="^\d{10}$" title="Enter your mobile number"
+						id="usercontact" name="usercontact"
+						placeholder="Enter Contact Number" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="userphone">First
+					Name</label>
+				<div class="col-sm-10">
+					<form:input path="first_name" type="text" class="form-control"
+						pattern="^\d{10}$" title="Enter your First Name"
+						id="first_name" name="first_name" placeholder="Enter your First Name" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="userphone">Last
+					Name</label>
+				<div class="col-sm-10">
+					<form:input path="last_name" type="text" class="form-control"
+						pattern="^\d{10}$" title="Enter your Last Name"
+						id="last_name" name="last_name" placeholder="Enter your Last Name" />
+				</div>
+			</div>
+			<div class="form-group ">
+				<label for="gender" class="control-label col-sm-2">Gender</label>
+				<div class="col-sm-offset-1 col-sm-9">
+					<label for="maleGender" class="radio-inline  label-control"><form:radiobutton
+							path="gender" name="gender" id="maleGender" required="true" />Male</label>
+					<label for="femaleGender" class="radio-inline label-control">
+						<form:radiobutton path="gender" name="gender" id="femaleGender" />Female
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="password">Password</label>
+				<div class="col-sm-10">
+					<form:input path="password" type="password" class="form-control"
+						id="password" placeholder="Enter password" name="password" />
+				</div>
+			</div>
+
+			<input type="submit" value="Sign Up"
+				class="col-sm-offset-2 btn btn-success btn-md">
+		</form:form>
+	</div>
+</body>
+</html>
+

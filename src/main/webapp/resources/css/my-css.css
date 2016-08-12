@@ -1,0 +1,131 @@
+
+body {
+	font-family: 'Harmattan', sans-serif;
+	font-weight: bold
+}
+
+#nav_1 {
+	background-image: url("${css}/blue_1.jpg");
+}
+
+#second_container {
+	background-color: #010101
+}
+
+#s {
+	width: 100px
+}
+
+<!--
+.container {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.container-fluid {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+-->
+li {
+	font-size: 18px
+}
+
+.navbar-default {
+	background-color: #F8F8F8; <!--
+	border-color: #E7E7E7;
+	-->
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #777777;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover,
+	.navbar-default .navbar-nav>.active>a:focus {
+	background-color: #E7E7E7;
+	color: #555555;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0; <!--
+	border: 0.5px solid #555;
+	-->
+}
+
+li a {
+	display: block;
+	color: #000; <!--
+	padding: 8px 16px; -->
+	text-decoration: none;
+}
+
+<!--
+li {
+	border-bottom: 1px solid #555;
+}
+
+li:last-child {
+	border-bottom: none;
+}
+
+-->
+li a.active {
+	background-color: #4CAF50;
+	color: white;
+}
+
+li a:hover:not (.active ) {
+	background-color: #555;
+	color: white;
+}
+
+<!--
+.carousel-inner img {
+	margin: auto;
+}
+
+-->
+.carousel-control.left, .carousel-control.right {
+	background-image: none
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+	min-height: 500px; /* Set slide height here */
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+	width: 70%;
+	margin: auto;
+}
+
+<!-- /* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+	margin-bottom: 0;
+	border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+	height: 450px
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+	padding-top: 20px;
+	background-color: #f1f1f1;
+	min-height: 100%;
+}
+/* Add a gray background color and some padding to the footer */
+footer {
+	background-color: #f2f2f2;
+	padding: 25px;
+}
+
+-->
+#footer_1 {
+	background-image: url("${css}/alignedbooks.jpg");
+	background-attachment: fixed;
+}
+

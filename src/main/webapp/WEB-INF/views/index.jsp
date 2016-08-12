@@ -1,36 +1,63 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<spring:url var="css" value="/resources/css" />
+<spring:url var="js" value="/resources/js" />
+<spring:url var="images" value="/resources/images" />
+<spring:url var="fonts" value="/resources/fonts" />
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
 <link rel="stylesheet"
-	href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="http://fonts.googleapis.com/css?family=Tangerine">
 <script
-	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-
-<link rel="stylesheet" href="<c:url value="/resources/menu.css" />">
-<link rel="stylesheet" href="<c:url value="/resources/main.css" />">
-
-<title>Shopping Cart</title>
-
-
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Harmattan"
+	rel="stylesheet">
+<link
+	href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'
+	rel='stylesheet'>
+<link
+	href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css'
+	rel="stylesheet">
+<link rel="stylesheet" href="${css}/my-css.css">
+<link rel="stylesheet" href="${css}/bootstrap.min.css">
+<link rel="stylesheet" href="${css}/google-fonts.css">
+<link rel="stylesheet" href="${css}/fonts-2.css">
+<link rel="stylesheet" href="${css}/fonts-3.css">
+<link rel="stylesheet" href="${css}/google-fonts.css">
+<link rel="stylesheet" href="${fonts}/bootstrap-glyphicons.css">
+<link href="${css}/bootstrap.css" rel="stylesheet">
+<link href="${css}/bootstrap-theme.css" rel="stylesheet">
+<link href="${css}/webapp.css" rel="stylesheet">
+<link rel="stylesheet" href="${css}/boostrap.css.map">
+<link rel="stylesheet" href="${css}/boostrap-theme.css.map">
 </head>
-<header></header>
 <body>
-
+	<%@include file="./shared/menu.jsp"%>
+	<c:if test="${isHomeClicked==true}">
+		<%@include file="HomePage.jsp"%>
+	</c:if>
 
 	<div data-role="page">
 		<div data-role="header" data-position="fixed">
-			<h1>Welcome to Shopping Cart</h1>
 			<table width="100%">
 				<tr>
 					<c:choose>
 						<c:when test="${empty loggedInUser}">
+							<h1>Welcome to Elixir! Register here!</h1>
 							<td align="left">Existing user<a href="loginHere"> Login
 									here</a></td>
 							<td align="center">New user<a href="registerHere">
@@ -64,20 +91,20 @@
 			<ul id="menu">
 				<c:if test="${not empty categoryList}">
 					<c:forEach items="${categoryList}" var="category">
-						<li><a href=${category.name}>${category.name}</a>
+						<li><a href=${category.catname}>${category.catname}</a>
 							<ul>
-								<c:forEach items="${category.products}" var="product">
+								<%-- <c:forEach items="${category}" var="product">
 
 									<li><a href="<c:url value='product/get/${product.id}' />">${product.name}</a></li>
 
 								</c:forEach>
-
+ --%>
 							</ul></li>
 					</c:forEach>
 				</c:if>
 
 			</ul>
-			<hr color="red" size="5">
+			<hr size="5">
 			<br> <br> <br>
 			<div>
 				<c:if test="${!empty selectedProduct.name}">
@@ -105,15 +132,15 @@
 
 			<div id="registerHere">
 				<c:if test="${isUserClickedRegisterHere==true}">
-					<%@ include file="/views/register.jsp"%>
-
+					<%@ include file="/WEB-INF/views/register.jsp"%>
 				</c:if>
 			</div>
 
 			<div id="loginHere">
-				<c:if test="${isUserClickedLoginHere==true || invalidCredentials==true}">
-				  <div id = "error">  ${errorMessage} </div>
-					<%@ include file="/views/login.jsp"%>
+				<c:if
+					test="${isUserClickedLoginHere==true || invalidCredentials==true}">
+					<div id="error">${errorMessage}</div>
+					<%@ include file="/WEB-INF/views/login.jsp"%>
 
 				</c:if>
 			</div>
@@ -122,27 +149,27 @@
 
 				<c:if test="${isAdmin==true}">
 
-					<%@ include file="/views/adminHome.jsp"%>
+					<%@ include file="/WEB-INF/views/adminPage.jsp"%>
 
 				</c:if>
 				<div id="categories">
 					<c:if test="${isAdminClickedCategories==true}">
-						<%@ include file="/views/adminHome.jsp"%>
-						<%@ include file="/views/category.jsp"%>
+						<%@ include file="/WEB-INF/views/adminPage.jsp"%>
+						<%@ include file="/WEB-INF/views/category.jsp"%>
 					</c:if>
 				</div>
 
 				<div id="products">
 					<c:if test="${isAdminClickedProducts==true}">
-						<%@ include file="/views/adminHome.jsp"%>
-						<%@ include file="/views/product.jsp"%>
+						<%@ include file="/WEB-INF/views/adminPage.jsp"%>
+						<%@ include file="/WEB-INF/views/product.jsp"%>
 					</c:if>
 				</div>
 
 				<div id="suppliers">
 					<c:if test="${isAdminClickedSuppliers==true}">
-						<%@ include file="/views/adminHome.jsp"%>
-						<%@ include file="/views/supplier.jsp"%>
+						<%@ include file="/WEB-INF/views/adminPage.jsp"%>
+						<%@ include file="/WEB-INF/views/supplier.jsp"%>
 					</c:if>
 				</div>
 
@@ -186,5 +213,8 @@
 			<h1>&copy; 2016 - Shopping Cart</h1>
 		</div>
 	</div>
+
 </body>
+<%@include file="./shared/footer.jsp"%>
 </html>
+

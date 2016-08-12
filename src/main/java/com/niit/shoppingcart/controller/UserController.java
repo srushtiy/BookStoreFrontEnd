@@ -20,7 +20,6 @@ import com.niit.bookstore.model.Cart;
 import com.niit.bookstore.model.Category;
 import com.niit.bookstore.model.User;
 
-
 @Controller
 public class UserController {
 
@@ -31,7 +30,7 @@ public class UserController {
 
 	@Autowired
 	User user;
-
+	
 	@Autowired
 	private CartDAO cartDAO;
 	
@@ -60,18 +59,18 @@ public class UserController {
 		log.info("userID is {}  password is {}", userID, password);
 
 	
-		ModelAndView mv = new ModelAndView("home");
-		boolean isValidUser = userDAO.isValidUser(userID, password);
+		ModelAndView mv = new ModelAndView("index");
+	/*	boolean isValidUser = userDAO.isValidUser(userID, password);
 
 		if (isValidUser == true) {
 			user = userDAO.get(userID);
-			session.setAttribute("loggedInUser", user.getName());
-			if (user.isAdmin()) {
+			session.setAttribute("loggedInUser", user.getUsername());
+			if (user.getAdmin() == 1) {
 				mv.addObject("isAdmin", "true");
 
 			} else {
 				mv.addObject("isAdmin", "false");
-				cart = cartDAO.get(userID);
+				cart = cartDAO.getbyuserid(userID);
 				mv.addObject("cart", cart);
 				List<Cart> cartList = cartDAO.list();
 				mv.addObject("cartList", cartList);
@@ -86,12 +85,13 @@ public class UserController {
 
 		}
 		log.debug("Ending of the method login");
-		return mv;
+*/		return mv;
 	}
 
+	 
 	@RequestMapping("/logout")
 	public ModelAndView logout(HttpServletRequest request, HttpSession session) {
-		ModelAndView mv = new ModelAndView("/home");
+		ModelAndView mv = new ModelAndView("index");
 		session.invalidate();
 		session = request.getSession(true);
 		session.setAttribute("category", category);

@@ -61,5 +61,4 @@ public class AdminController {
 		mv.addObject("supplierList", supplierDAO.supplierlist());
 		return mv;
 	}
-
 }
