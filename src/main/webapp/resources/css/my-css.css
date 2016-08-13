@@ -1,11 +1,13 @@
-
 body {
 	font-family: 'Harmattan', sans-serif;
-	font-weight: bold
+	font-weight: bold;
+	background-image:
+		url("https://i.ytimg.com/vi/gKIFk8BJsDc/maxresdefault.jpg");
+	background-attachment: fixed;
 }
 
 #nav_1 {
-	background-image: url("${css}/blue_1.jpg");
+	background: black
 }
 
 #second_container {
@@ -76,11 +78,32 @@ li a.active {
 	color: white;
 }
 
-li a:hover:not (.active ) {
-	background-color: #555;
-	color: white;
-}
+li
+ 
+a
+:hover
+:not
+ 
+(
+.active
+ 
+)
+{
+background-color
+:
+ 
+#555
+;
 
+	
+color
+:
+ 
+white
+;
+
+
+}
 <!--
 .carousel-inner img {
 	margin: auto;
@@ -125,7 +148,7 @@ footer {
 
 -->
 #footer_1 {
-	background-image: url("${css}/alignedbooks.jpg");
+	background-image:
+		url("https://anthologywellness.files.wordpress.com/2013/03/books.jpg?w=300&h=165");
 	background-attachment: fixed;
 }
-

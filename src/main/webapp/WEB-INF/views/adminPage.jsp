@@ -5,12 +5,20 @@
 <html>
 
 <body>
-	<div id="adminHome">
-		<a href="manageCategories">Manage Categories</a> &nbsp; &nbsp;
-		<a href="manageSuppliers">Manage Suppliers</a>  &nbsp; &nbsp; 
-		<a href="manageProducts">Manage Products</a> &nbsp; &nbsp;
-
+	<div class="container-fluid" style="background-color: transparent;">
+		<div id="adminHome" align="center">
+			<div
+				class="well well-sm"> <h3><a href="manageCategories"> Manage Categories</h3> </a> &nbsp; &nbsp;
+			</div>
+			<div
+				class="well well-sm"><h3><a href="manageSuppliers">Manage Suppliers</h3></a> &nbsp; &nbsp;
+				</div>
+			<div
+				class="well well-sm"><h3> <a href="manageProducts"> Manage Products</h3></a> &nbsp; &nbsp;
+				</div>
+		</div>
 	</div>
+
 
 
 </body>

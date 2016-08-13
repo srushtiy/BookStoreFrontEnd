@@ -29,7 +29,7 @@ public class CategoryController {
 	@RequestMapping("/admin/viewCat")
 	public ModelAndView adminSeeCategory(Model model) {
 		log.debug("method starting");
-		ModelAndView mv = new ModelAndView("page");
+		ModelAndView mv = new ModelAndView("index");
 		List<Category> catList = categoryDAO.list();
 
 		model.addAttribute("category", category);
@@ -41,7 +41,7 @@ public class CategoryController {
 	@RequestMapping("/admin/viewCat/add")
 	public ModelAndView adminAddCat()
 	{
-		ModelAndView mv = new ModelAndView("/page");
+		ModelAndView mv = new ModelAndView("index");
 		mv.addObject("category",category);
 		mv.addObject("isAddCat","true");
 		mv.addObject("showSignOut","true");
@@ -51,7 +51,7 @@ public class CategoryController {
 
 	@RequestMapping(value = "/admin/viewCat", method = RequestMethod.POST)
 	public ModelAndView addCat(@ModelAttribute("category") @Valid Category category){
-		ModelAndView mv = new ModelAndView("/page");
+		ModelAndView mv = new ModelAndView("index");
 		mv.addObject("category", category);
 		mv.addObject("isViewCat", "true");
 		mv.addObject("showSignOut","true");

@@ -53,18 +53,19 @@ public class UserController {
 	 * @return it will return data and page name where to return
 	 */
 	@RequestMapping("/login")
-	public ModelAndView login(@RequestParam(value = "name") String userID,
+	public ModelAndView login(@RequestParam(value = "useremail") String useremail,
 			@RequestParam(value = "password") String password, HttpSession session) {
 		log.debug("Starting of the method login");
-		log.info("userID is {}  password is {}", userID, password);
+		log.info("userID is {}  password is {}", useremail, password);
+		
 
 	
 		ModelAndView mv = new ModelAndView("index");
-	/*	boolean isValidUser = userDAO.isValidUser(userID, password);
+	/*	boolean isValidUser = userDAO.isValidUser(useremail, password);
 
 		if (isValidUser == true) {
-			user = userDAO.get(userID);
-			session.setAttribute("loggedInUser", user.getUsername());
+			user = userDAO.get(useremail);
+			session.setAttribute("loggedInUser", user.getUseremail());
 			if (user.getAdmin() == 1) {
 				mv.addObject("isAdmin", "true");
 
@@ -84,8 +85,8 @@ public class UserController {
 			
 
 		}
-		log.debug("Ending of the method login");
-*/		return mv;
+		log.debug("Ending of the method login");*/
+		return mv;
 	}
 
 	 

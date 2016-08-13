@@ -1,4 +1,4 @@
-/*package com.niit.shoppingcart.controller;
+package com.niit.shoppingcart.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,16 +40,15 @@ public class ProductController {
 		return "product";
 	}
 	
-	public String addProduct(@ModelAttribute("product") Product product){
-		Category category = categoryDAO.get(product.getCategory().getName());
+	/*public String addProduct(@ModelAttribute("product") Product product){
+		Category category = categoryDAO.get(product.getCatid());
 		Supplier supplier = supplierDAO.get(product.getSupplier().getName());
-	}
+	}*/
 	
-	product.setCategory(category);
+	/*product.setCategory(category);
 	product.setSupplier(supplier);
 	
-	public String removeProduct(@ModelAttribute())
+	public String removeProduct(@ModelAttribute())*/
 	
 
 }
-*/

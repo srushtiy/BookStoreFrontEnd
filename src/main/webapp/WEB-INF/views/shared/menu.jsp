@@ -51,59 +51,6 @@
 	</div>
 </div>
 <br>
-<!--<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-	  <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-	        <li class="dropdown">
-	            <a href="#" class="dropdown-toggle" class="color-me" data-toggle="dropdown"> Shop by Category <b class="caret"></b></a>
-	            <ul class="dropdown-menu">
-		            <li><a href="#" class="color-me">Best-sellers</a></li>
-		            <li><a href="#" class="color-me">Literature & Fiction</a></li>
-		            <li><a href="#" class="color-me">Non-fiction</a></li>
-		            <li><a href="#" class="color-me">One more separated link</a></li>
-	            </ul>
-	        </li>
-			<li class="dropdown">
-	            <a href="#" class="dropdown-toggle" class="color-me" data-toggle="dropdown"> Best-Sellers <b class="caret"></b></a>
-	        </li>
-			<li class="dropdown">
-	            <a href="#" class="dropdown-toggle" class="color-me" data-toggle="dropdown"> New Releases! <b class="caret"></b></a>
-	        </li>
-			<li class="dropdown">
-	            <a href="#" class="dropdown-toggle" class="color-me" data-toggle="dropdown"> Arts & Photography <b class="caret"></b></a>
-	        </li>
-			<li class="dropdown">
-	            <a href="#" class="dropdown-toggle" class="color-me" data-toggle="dropdown"> Biographies & Autobiographies <b class="caret"></b></a>
-	        </li>
-			<li class="dropdown">
-	            <a href="#" class="dropdown-toggle" class="color-me" data-toggle="dropdown"> Cookbooks <b class="caret"></b></a>
-	        </li>
-	        <li class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Textbooks <b class="caret"></b></a>
-	            <ul class="dropdown-menu">
-		            <li><a href="#">Pre-Kindergarten, Primary and Secondary</a></li>
-		            <li><a href="#">High School Textbooks</a></li>
-		            <li><a href="#">Surf by category</a></li>
-	            </ul>
-	        </li>
-	        <li class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Books in Indian languages <b class="caret"></b></a>
-	            <ul class="dropdown-menu">
-		            <li><a href="#">Hindi</a></li>
-		            <li><a href="#">Tamil</a></li>
-		            <li><a href="#">Bengali</a></li>
-		            <li class="divider"></li>
-		            <li><a href="#">More Languages</a></li>
-			
-	        </li>
-	        <li><a href="#">Link</a></li>
-        </ul>
-    </div>
-    </div>
-  </div>
-</nav>-->
 
 <nav class="navbar navbar-inverse" id="nav_1">
 	<div class="container-fluid">

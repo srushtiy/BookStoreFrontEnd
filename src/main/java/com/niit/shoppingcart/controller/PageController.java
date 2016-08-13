@@ -55,10 +55,10 @@ public class PageController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/loginHere", method = RequestMethod.POST)
+	@RequestMapping(value = "/loginHere")
 	public ModelAndView loginHere() {
 		ModelAndView mv = new ModelAndView("index");
-		mv.addObject("userDetails", new User());
+		mv.addObject("user", user);
 		mv.addObject("isUserClickedLoginHere", "true");
 		return mv;
 	}
@@ -67,6 +67,7 @@ public class PageController {
 	public ModelAndView registerUser(@ModelAttribute User user) {
 		userDAO.saveorUpdate(user);
 		ModelAndView mv = new ModelAndView("index");
+		mv.addObject("displaySuccessRegistered", "true");
 		mv.addObject("successMessage", "You have successfully registered");
 
 		return mv;

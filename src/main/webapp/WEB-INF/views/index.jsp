@@ -16,22 +16,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home</title>
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css"
-	href="http://fonts.googleapis.com/css?family=Tangerine">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Harmattan"
-	rel="stylesheet">
-<link
-	href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'
-	rel='stylesheet'>
-<link
-	href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css'
-	rel="stylesheet">
 <link rel="stylesheet" href="${css}/my-css.css">
 <link rel="stylesheet" href="${css}/bootstrap.min.css">
 <link rel="stylesheet" href="${css}/google-fonts.css">
@@ -56,12 +40,16 @@
 			<table width="100%">
 				<tr>
 					<c:choose>
-						<c:when test="${empty loggedInUser}">
-							<h1>Welcome to Elixir! Register here!</h1>
+						<c:when test="${empty loggedInUser== true}">
+							<c:if test="{isUserClickedLoginHere == true}">
 							<td align="left">Existing user<a href="loginHere"> Login
 									here</a></td>
+									</c:if>
+							<c:if test="{isUserClickedRegisterHere == true}">
 							<td align="center">New user<a href="registerHere">
 									Register here</a></td>
+									<h1>Welcome to Elixir! Register here!</h1>
+							</c:if>
 						</c:when>
 						<c:when test="${not empty loggedInUser}">
 							<td>Welcome ${loggedInUser},</td>
@@ -91,12 +79,10 @@
 			<ul id="menu">
 				<c:if test="${not empty categoryList}">
 					<c:forEach items="${categoryList}" var="category">
-						<li><a href=${category.catname}>${category.catname}</a>
+						<li><a href=${category.catname}> ${category.catname}</a>
 							<ul>
 								<%-- <c:forEach items="${category}" var="product">
-
 									<li><a href="<c:url value='product/get/${product.id}' />">${product.name}</a></li>
-
 								</c:forEach>
  --%>
 							</ul></li>
@@ -210,11 +196,10 @@
 			</div>
 		</div>
 		<div data-role="footer" data-position="fixed">
-			<h1>&copy; 2016 - Shopping Cart</h1>
+			<h3 style="color:white;">&copy; 2016 - Shopping Cart</h3>
 		</div>
 	</div>
 
 </body>
 <%@include file="./shared/footer.jsp"%>
 </html>
-

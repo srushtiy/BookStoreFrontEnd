@@ -33,29 +33,36 @@ public class AdminController {
 	
 	@Autowired
 	private ProductDAO productDAO;
-
 	
-	@RequestMapping("/manageCategories")
+	@RequestMapping("/admin")
+	public ModelAndView admin(){
+		ModelAndView mv = new ModelAndView("index");
+		mv.addObject("isAdmin", true);
+		
+		return mv;
+	}
+	
+	@RequestMapping("/admin/manageCategories")
 	public ModelAndView categories() {
-		ModelAndView mv = new ModelAndView("/home");
+		ModelAndView mv = new ModelAndView("index");
 		mv.addObject("category", category);
 		mv.addObject("isAdminClickedCategories", "true");
 		mv.addObject("categoryList", categoryDAO.list());
 		return mv;
 	}
 
-	@RequestMapping("/manageProducts")
+	@RequestMapping("/admin/manageProducts")
 	public ModelAndView suppliers() {
-		ModelAndView mv = new ModelAndView("/home");
+		ModelAndView mv = new ModelAndView("index");
 		mv.addObject("product", product);
 		mv.addObject("isAdminClickedProducts", "true");
 		mv.addObject("productList", productDAO.productlist());
 		return mv;
 	}
 
-	@RequestMapping("/manageSuppliers")
+	@RequestMapping("/admin/manageSuppliers")
 	public ModelAndView products() {
-		ModelAndView mv = new ModelAndView("/home");
+		ModelAndView mv = new ModelAndView("index");
 		mv.addObject("supplier", supplier);
 		mv.addObject("isAdminClickedSuppliers", "true");
 		mv.addObject("supplierList", supplierDAO.supplierlist());
