@@ -10,7 +10,6 @@
 	<h2 style="text-align: center">Login to your Elixir Account!</h2>
 	<br> ${message}
 	<c:url var="action" value="loginHere"></c:url>
-	
 	<div class="container">
 		<div class="panel-body">
 			<form:form class="form-horizontal" role="form" method="post"

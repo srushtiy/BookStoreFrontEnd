@@ -28,6 +28,9 @@
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 
 </beans>
-<!--  know entire debugging process  -->
-<!--  logging is faster than debugging - logging statement auto completed - all of it printed on file-->
-<!-- sysout println - errors are over written - but for logging we can document errors with specific dates and times -->
+
+<!-- know entire debugging process -->
+<!-- logging is faster than debugging - logging statement auto completed 
+	- all of it printed on file -->
+<!-- sysout println - errors are over written - but for logging we can document 
+	errors with specific dates and times -->

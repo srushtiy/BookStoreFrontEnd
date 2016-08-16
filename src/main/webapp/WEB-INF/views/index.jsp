@@ -18,11 +18,12 @@
 <title>Home</title>
 <link rel="stylesheet" href="${css}/my-css.css">
 <link rel="stylesheet" href="${css}/bootstrap.min.css">
-<link rel="stylesheet" href="${css}/google-fonts.css">
+<%-- <link rel="stylesheet" href="${css}/google-fonts.css">
 <link rel="stylesheet" href="${css}/fonts-2.css">
-<link rel="stylesheet" href="${css}/fonts-3.css">
-<link rel="stylesheet" href="${css}/google-fonts.css">
+<link rel="stylesheet" href="${css}/fonts-3.css"> 
+<link rel="stylesheet" href="${css}/google-fonts.css">--%>
 <link rel="stylesheet" href="${fonts}/bootstrap-glyphicons.css">
+<link rel="stylesheet" type="text/css" href="${fonts}/harmattan-css.css">
 <link href="${css}/bootstrap.css" rel="stylesheet">
 <link href="${css}/bootstrap-theme.css" rel="stylesheet">
 <link href="${css}/webapp.css" rel="stylesheet">
@@ -35,10 +36,10 @@
 		<%@include file="HomePage.jsp"%>
 	</c:if>
 
-	<div data-role="page">
-		<div data-role="header" data-position="fixed">
-			<table width="100%">
-				<tr>
+	<!-- <div data-role="page">
+		<div data-role="header" data-position="fixed"> -->
+			<!-- <table width="100%">
+				<tr> -->
 					<c:choose>
 						<c:when test="${empty loggedInUser== true}">
 							<c:if test="{isUserClickedLoginHere == true}">
@@ -57,8 +58,8 @@
 						</c:when>
 
 					</c:choose>
-				</tr>
-				<tr>
+				<!-- </tr>
+				<tr> -->
 					<c:if test="${loggedOut==true}">
 						<td>${logoutMessage}</td>
 					</c:if>
@@ -70,7 +71,7 @@
 					</c:if>
 				</tr>
 			</table>
-		</div>
+		<!-- </div> -->
 
 		<div data-role="main" class="ui-content">
 
@@ -79,7 +80,7 @@
 			<ul id="menu">
 				<c:if test="${not empty categoryList}">
 					<c:forEach items="${categoryList}" var="category">
-						<li><a href=${category.catname}> ${category.catname}</a>
+						<li><a href="${category.catname}"> ${category.catname}</a>
 							<ul>
 								<%-- <c:forEach items="${category}" var="product">
 									<li><a href="<c:url value='product/get/${product.id}' />">${product.name}</a></li>
@@ -92,7 +93,7 @@
 			</ul>
 			<hr size="5">
 			<br> <br> <br>
-			<div>
+			<%-- <div>
 				<c:if test="${!empty selectedProduct.name}">
 					<table>
 						<tr>
@@ -114,7 +115,7 @@
 						</tr>
 					</table>
 				</c:if>
-			</div>
+			</div> --%>
 
 			<div id="registerHere">
 				<c:if test="${isUserClickedRegisterHere==true}">
@@ -133,29 +134,71 @@
 
 			<div id="admin">
 
-				<c:if test="${isAdmin==true}">
+				<c:if test="${isAdmin==true}">o
 
 					<%@ include file="/WEB-INF/views/adminPage.jsp"%>
 
 				</c:if>
 				<div id="categories">
-					<c:if test="${isAdminClickedCategories==true}">
+					<c:if test="${isClickedAdminViewCategory==true}">
 						<%@ include file="/WEB-INF/views/adminPage.jsp"%>
-						<%@ include file="/WEB-INF/views/category.jsp"%>
+						<%@ include file="/WEB-INF/views/viewCategory.jsp"%>
+					</c:if>
+				</div>
+				<div id="categories">
+					<c:if test="${isAddCategoryClicked==true}">
+						<%@ include file="/WEB-INF/views/adminPage.jsp"%>
+						<%@ include file="/WEB-INF/views/addCategory.jsp"%>
+					</c:if>
+				</div>
+				<div id="categories">
+					<c:if test="${isUpdateCategoryClicked==true}">
+						<%@ include file="/WEB-INF/views/adminPage.jsp"%>
+						<%@ include file="/WEB-INF/views/editCategory.jsp"%>
 					</c:if>
 				</div>
 
 				<div id="products">
-					<c:if test="${isAdminClickedProducts==true}">
+					<c:if test="${isClickedAdminViewSupplier==true}">
 						<%@ include file="/WEB-INF/views/adminPage.jsp"%>
-						<%@ include file="/WEB-INF/views/product.jsp"%>
+						<%@ include file="/WEB-INF/views/viewSupplier.jsp"%>
+					</c:if>
+				</div>
+				
+				<div id="suppliers">
+					<c:if test="${isAddSupplierClicked==true}">
+						<%@ include file="/WEB-INF/views/adminPage.jsp"%>
+						<%@ include file="/WEB-INF/views/addSupplier.jsp"%>
+						<%@ include file="/WEB-INF/views/viewSupplier.jsp"%>
 					</c:if>
 				</div>
 
 				<div id="suppliers">
-					<c:if test="${isAdminClickedSuppliers==true}">
+					<c:if test="${isUpdateSupplierClicked==true}">
 						<%@ include file="/WEB-INF/views/adminPage.jsp"%>
-						<%@ include file="/WEB-INF/views/supplier.jsp"%>
+						<%@ include file="/WEB-INF/views/editSupplier.jsp"%>
+					</c:if>
+				</div>
+				
+				<div id="categories">
+					<c:if test="${isAdminClickedViewProduct==true}">
+						<%@ include file="/WEB-INF/views/adminPage.jsp"%>
+						<%@ include file="/WEB-INF/views/viewProduct.jsp"%>
+						<%-- <%@ include file="/WEB-INF/views/editCategory.jsp"%> --%>
+					</c:if>
+				</div>
+				<div id="categories">
+					<c:if test="${isAddProductClicked==true}">
+						<%@ include file="/WEB-INF/views/adminPage.jsp"%>
+						<%@ include file="/WEB-INF/views/addProduct.jsp"%>
+						<%-- <%@ include file="/WEB-INF/views/editCategory.jsp"%> --%>
+					</c:if>
+				</div>
+				<div id="categories">
+					<c:if test="${isUpdateProductClicked==true}">
+						<%@ include file="/WEB-INF/views/adminPage.jsp"%>
+						<%@ include file="/WEB-INF/views/editProduct.jsp"%>
+						<%-- <%@ include file="/WEB-INF/views/editCategory.jsp"%> --%>
 					</c:if>
 				</div>
 
@@ -198,7 +241,7 @@
 		<div data-role="footer" data-position="fixed">
 			<h3 style="color:white;">&copy; 2016 - Shopping Cart</h3>
 		</div>
-	</div>
+	<!-- </div> -->
 
 </body>
 <%@include file="./shared/footer.jsp"%>

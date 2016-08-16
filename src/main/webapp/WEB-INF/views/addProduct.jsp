@@ -76,36 +76,5 @@
 			</tr>
 		</table>
 	</form:form>
-	<br>
-
-
-
-	<h3>Product List</h3>
-	<c:if test="${!empty productList}">
-		<table class="tg">
-			<tr>
-				<th width="80">Product ID</th>
-				<th width="120">Product Name</th>
-				<th width="200">Product Description</th>
-				<th width="80">Price</th>
-				<th width="80">Product Category</th>
-				<th width="80">Product Supplier</th>
-				<th width="60">Edit</th>
-				<th width="60">Delete</th>
-			</tr>
-			<c:forEach items="${productList}" var="product">
-				<tr>
-					<td>${product.id}</td>
-					<td>${product.name}</td>
-					<td>${product.description}</td>
-					<td>${product.price}</td>
-					<td>${product.category.name}</td>
-					<td>${product.supplier.name}</td>
-					<td><a href="<c:url value='product/edit/${product.id}' />">Edit</a></td>
-					<td><a href="<c:url value='product/remove/${product.id}' />">Delete</a></td>
-				</tr>
-			</c:forEach>
-		</table>
-	</c:if>
 </body>
 </html>

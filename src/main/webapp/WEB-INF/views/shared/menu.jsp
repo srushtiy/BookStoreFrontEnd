@@ -1,12 +1,16 @@
 <header class="wrap navbar-fixed-top navbar-inverse">
 	<div class="container-fluid" style="background-color: black">
 		<div class="col-xs-12 pull-right">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
-						Login/Register </a></li>
+			<ul class="nav navbar-nav navbar-left">
+				<li><a href="index"><span class="glyphicon glyphicon-home"></span>
+						Home </a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span
+				<li><a href="loginHere"><span class="glyphicon glyphicon-user"></span>
+						Login </a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="ShoppingCartFrontEnd/"><span
 						class="glyphicon glyphicon-shopping-cart"></span> Your Cart</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -40,8 +44,8 @@
 			style="height: 45px; margin-top: -3px;" src="${images}/logo3.png">
 		<br>
 		<div class="input-group">
-			<input type="text" class="search-query form-control" id="search"/>
-			<span class="input-group-btn">
+			<input type="text" class="search-query form-control" id="search" /> <span
+				class="input-group-btn">
 				<button class="btn btn-black" type="button">
 					<span class=" glyphicon glyphicon-search"></span>
 				</button>

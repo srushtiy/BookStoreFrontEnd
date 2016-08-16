@@ -15,7 +15,7 @@
 <body style="color:white;">
 	<div class="container">
 	<c:if test="${displaySuccessRegistered == true}">
-	<div class="alert alert-success"><strong>Registration successfull</strong></div>
+	<div class="alert alert-success"><strong>Registration successful </strong></div>
 	</c:if>
 		<div class="panel-body">
 			<form:form class="form-horizontal" role="form" method="post"
